@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineDigital · IU Digital de Antioquia</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── SIDEBAR ─────────────────────────────────────────── -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <span class="logo-icon">🎬</span>
+    <span class="logo-text">CineDigital</span>
+  </div>
+  <p class="sidebar-subtitle">Panel de Administración</p>
+
+  <nav class="sidebar-nav">
+    <button class="nav-btn active" data-section="dashboard">
+      <span class="nav-icon">📊</span> Dashboard
+    </button>
+    <button class="nav-btn" data-section="generos">
+      <span class="nav-icon">🎭</span> Géneros
+    </button>
+    <button class="nav-btn" data-section="directores">
+      <span class="nav-icon">🎥</span> Directores
+    </button>
+    <button class="nav-btn" data-section="productoras">
+      <span class="nav-icon">🏢</span> Productoras
+    </button>
+    <button class="nav-btn" data-section="tipos">
+      <span class="nav-icon">📁</span> Tipos
+    </button>
+    <button class="nav-btn" data-section="media">
+      <span class="nav-icon">🎞️</span> Películas &amp; Series
+    </button>
+  </nav>
+
+  <div class="sidebar-footer">IU Digital de Antioquia</div>
+</aside>
+
+<!-- ── TOPBAR ─────────────────────────────────────────── -->
+<div class="layout">
+  <header class="topbar">
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <h1 class="topbar-title" id="topbarTitle">Dashboard</h1>
+    <div class="topbar-right">
+      <span class="topbar-badge">Administrador</span>
+    </div>
+  </header>
+
+  <!-- ── MAIN ──────────────────────────────────────────── -->
+  <main class="main-content">
+
+    <!-- DASHBOARD -->
+    <section id="section-dashboard" class="section active">
+      <div class="stats-grid">
+        <div class="stat-card" id="stat-generos">
+          <div class="stat-icon">🎭</div>
+          <div class="stat-info">
+            <span class="stat-number" id="count-generos">—</span>
+            <span class="stat-label">Géneros</span>
+          </div>
+        </div>
+        <div class="stat-card" id="stat-directores">
+          <div class="stat-icon">🎥</div>
+          <div class="stat-info">
+            <span class="stat-number" id="count-directores">—</span>
+            <span class="stat-label">Directores</span>
+          </div>
+        </div>
+        <div class="stat-card" id="stat-productoras">
+          <div class="stat-icon">🏢</div>
+          <div class="stat-info">
+            <span class="stat-number" id="count-productoras">—</span>
+            <span class="stat-label">Productoras</span>
+          </div>
+        </div>
+        <div class="stat-card" id="stat-tipos">
+          <div class="stat-icon">📁</div>
+          <div class="stat-info">
+            <span class="stat-number" id="count-tipos">—</span>
+            <span class="stat-label">Tipos</span>
+          </div>
+        </div>
+        <div class="stat-card highlight" id="stat-media">
+          <div class="stat-icon">🎞️</div>
+          <div class="stat-info">
+            <span class="stat-number" id="count-media">—</span>
+            <span class="stat-label">Películas &amp; Series</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-recent">
+        <h2 class="section-title">Últimas producciones agregadas</h2>
+        <div id="recent-media" class="recent-cards">
+          <p class="empty-msg">Cargando...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GÉNEROS -->
+    <section id="section-generos" class="section">
+      <div class="section-header">
+        <h2 class="section-title">Géneros</h2>
+        <button class="btn btn-primary" id="btn-new-genero">+ Nuevo Género</button>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="table-generos">
+          <thead>
+            <tr>
+              <th>ID</th><th>Nombre</th><th>Estado</th>
+              <th>Descripción</th><th>Creado</th><th>Actualizado</th><th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- DIRECTORES -->
+    <section id="section-directores" class="section">
+      <div class="section-header">
+        <h2 class="section-title">Directores</h2>
+        <button class="btn btn-primary" id="btn-new-director">+ Nuevo Director</button>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="table-directores">
+          <thead>
+            <tr>
+              <th>ID</th><th>Nombres</th><th>Estado</th>
+              <th>Creado</th><th>Actualizado</th><th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PRODUCTORAS -->
+    <section id="section-productoras" class="section">
+      <div class="section-header">
+        <h2 class="section-title">Productoras</h2>
+        <button class="btn btn-primary" id="btn-new-productora">+ Nueva Productora</button>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="table-productoras">
+          <thead>
+            <tr>
+              <th>ID</th><th>Nombre</th><th>Estado</th><th>Slogan</th>
+              <th>Descripción</th><th>Creado</th><th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TIPOS -->
+    <section id="section-tipos" class="section">
+      <div class="section-header">
+        <h2 class="section-title">Tipos de Multimedia</h2>
+        <button class="btn btn-primary" id="btn-new-tipo">+ Nuevo Tipo</button>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="table-tipos">
+          <thead>
+            <tr>
+              <th>ID</th><th>Nombre</th><th>Descripción</th>
+              <th>Creado</th><th>Actualizado</th><th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- MEDIA -->
+    <section id="section-media" class="section">
+      <div class="section-header">
+        <h2 class="section-title">Películas &amp; Series</h2>
+        <button class="btn btn-primary" id="btn-new-media">+ Nueva Producción</button>
+      </div>
+      <!-- Filtros -->
+      <div class="filter-bar">
+        <select id="filter-tipo" class="input-field" style="max-width:180px">
+          <option value="">Todos los tipos</option>
+        </select>
+        <select id="filter-genero" class="input-field" style="max-width:200px">
+          <option value="">Todos los géneros</option>
+        </select>
+        <input type="text" id="filter-search" class="input-field" placeholder="Buscar por título..." style="max-width:240px" />
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="table-media">
+          <thead>
+            <tr>
+              <th>ID</th><th>Serial</th><th>Título</th><th>Tipo</th>
+              <th>Género</th><th>Director</th><th>Productora</th>
+              <th>Año</th><th>URL</th><th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ── MODAL ───────────────────────────────────────────── -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <h3 id="modal-title">Formulario</h3>
+      <button class="modal-close" id="modalClose">&times;</button>
+    </div>
+    <div class="modal-body" id="modal-body">
+      <!-- Formulario inyectado dinámicamente -->
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" id="modalCancel">Cancelar</button>
+      <button class="btn btn-primary" id="modalSave">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONFIRM DIALOG ──────────────────────────────────── -->
+<div class="modal-overlay" id="confirmOverlay">
+  <div class="modal confirm-modal">
+    <div class="modal-header">
+      <h3>⚠️ Confirmar eliminación</h3>
+    </div>
+    <div class="modal-body">
+      <p id="confirm-msg">¿Estás seguro de que deseas eliminar este registro?</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" id="confirmNo">Cancelar</button>
+      <button class="btn btn-danger" id="confirmYes">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── DETALLE MEDIA ───────────────────────────────────── -->
+<div class="modal-overlay" id="detailOverlay">
+  <div class="modal detail-modal">
+    <div class="modal-header">
+      <h3 id="detail-title">Detalle</h3>
+      <button class="modal-close" id="detailClose">&times;</button>
+    </div>
+    <div class="modal-body" id="detail-body"></div>
+  </div>
+</div>
+
+<!-- ── TOAST ───────────────────────────────────────────── -->
+<div id="toast-container"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

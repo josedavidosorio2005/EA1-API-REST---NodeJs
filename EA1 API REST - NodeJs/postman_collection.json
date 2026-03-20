@@ -1,0 +1,298 @@
+{
+  "info": {
+    "name": "API REST Películas y Series",
+    "description": "Colección de endpoints para la API REST de películas y series",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Géneros",
+      "item": [
+        {
+          "name": "Obtener todos los géneros",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/generos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "generos"]
+            }
+          }
+        },
+        {
+          "name": "Crear género",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\\n  \"nombre\": \"Acción\",\\n  \"descripcion\": \"Películas de aventura y acción\"\\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/generos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "generos"]
+            }
+          }
+        },
+        {
+          "name": "Obtener género por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/generos/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "generos", "1"]
+            }
+          }
+        },
+        {
+          "name": "Actualizar género",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\\n  \"nombre\": \"Acción\",\\n  \"descripcion\": \"Películas de acción y aventura actualizadas\"\\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/generos/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "generos", "1"]
+            }
+          }
+        },
+        {
+          "name": "Eliminar género",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/generos/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "generos", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Directores",
+      "item": [
+        {
+          "name": "Obtener todos los directores",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/directores",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "directores"]
+            }
+          }
+        },
+        {
+          "name": "Crear director",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\\n  \"nombre\": \"Steven\",\\n  \"apellido\": \"Spielberg\",\\n  \"email\": \"steven@example.com\",\\n  \"telefono\": \"+1-555-0100\",\\n  \"pais\": \"Estados Unidos\"\\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/directores",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "directores"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Productoras",
+      "item": [
+        {
+          "name": "Obtener todas las productoras",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/productoras",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "productoras"]
+            }
+          }
+        },
+        {
+          "name": "Crear productora",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\\n  \"nombre\": \"Universal Pictures\",\\n  \"pais\": \"Estados Unidos\",\\n  \"email\": \"info@universal.com\",\\n  \"telefono\": \"+1-555-0200\",\\n  \"website\": \"www.universalstudios.com\"\\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/productoras",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "productoras"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tipos",
+      "item": [
+        {
+          "name": "Obtener todos los tipos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/tipos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "tipos"]
+            }
+          }
+        },
+        {
+          "name": "Crear tipo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\\n  \"nombre\": \"Película\",\\n  \"descripcion\": \"Largometraje de cine\"\\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/tipos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "tipos"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Media",
+      "item": [
+        {
+          "name": "Obtener todos los media",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/media",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "media"]
+            }
+          }
+        },
+        {
+          "name": "Crear media",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\\n  \"titulo\": \"Jurassic Park\",\\n  \"descripcion\": \"Una aventura en un parque con dinosaurios\",\\n  \"año\": 1993,\\n  \"duracion\": 127,\\n  \"puntuacion\": 8.1,\\n  \"tipo_id\": 1,\\n  \"director_id\": 1,\\n  \"productora_id\": 1,\\n  \"genero_id\": 1,\\n  \"cartel\": \"jurassic-park.jpg\",\\n  \"fecha_lanzamiento\": \"1993-06-11\"\\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/media",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "media"]
+            }
+          }
+        },
+        {
+          "name": "Obtener media por tipo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/media/filtro/tipo/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "media", "filtro", "tipo", "1"]
+            }
+          }
+        },
+        {
+          "name": "Obtener media por género",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/media/filtro/genero/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "media", "filtro", "genero", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
